@@ -11,6 +11,7 @@ using Sale_Manage.Admin;
 
 namespace Sale_Manage {
     public partial class frmMain : Form {
+        public int ROLE { get; set; }
         public frmMain() {
             this.StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();

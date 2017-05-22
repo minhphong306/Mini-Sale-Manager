@@ -33,11 +33,13 @@ namespace Sale_Manage {
             string pass = txtPass.Text;
            
             if (acc == "") {
-                MessageBox.Show("Vui lòng nhập vào tên tài khoản");
+                lbStatus.Text = "Vui lòng nhập vào tên tài khoản";
+                lbStatus.Visible = true;
                 return;
             }
             if (pass == "") {
-                MessageBox.Show("Vui lòng nhập vào mật khẩu");
+                lbStatus.Text = "Vui lòng nhập vào mật khẩu";
+                lbStatus.Visible = true;
                 return;
             }
             string strSQL = string.Format("SELECT * FROM NHANVIEN " +
@@ -47,18 +49,29 @@ namespace Sale_Manage {
             int a = data.Rows.Count;
             if (a == 0)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                lbStatus.Text = "Sai tên đăng nhập";
+                lbStatus.Visible = true;
                 return;
             }
             else
             {
+                long state = long.Parse(data.Rows[0]["TRANGTHAI"].ToString());
+                if (state == 0)
+                {
+                    lbStatus.Text = "Tài khoản đã bị khóa";
+                    lbStatus.Visible = true;
+                    return;
+                }
+
+                lbStatus.Visible = false;
                 this.Hide();
+                int role = int.Parse(data.Rows[0]["MABOPHAN"].ToString());
                 frmMain fMain = new frmMain();
+                fMain.ROLE = role;
                 fMain.ShowDialog();
                 this.Close();
             }
 
-            
         }
     }
 }
