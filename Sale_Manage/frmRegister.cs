@@ -24,6 +24,8 @@ namespace Sale_Manage {
             string acc = txtAcc.Text.Trim().Replace("-", "");
             string pass = txtPass.Text;
             long bp = long.Parse(cbMod.SelectedValue.ToString());
+
+            // Kiểm tra các trường bỏ trống
             if (acc == "")
             {
                 MessageBox.Show("Vui lòng nhập vào tên tài khoản");
@@ -33,6 +35,19 @@ namespace Sale_Manage {
                 MessageBox.Show("Vui lòng nhập vào mật khẩu");
                 return;
             }
+
+            // Kiểm tra tên tài khoản, mật khẩu đã tồn tại
+            string strSQL1 = string.Format("SELECT * FROM NHANVIEN " +
+                                          "where TENTAIKHOAN = '{0}'", acc);
+            DataTable data = DBHelper.getDataTable(strSQL1);
+            int a = data.Rows.Count;
+            if (a > 0)
+            {
+                MessageBox.Show("Tài khoản đã tồn tại");
+                return;
+            }
+
+            // Đăng kí tài khoản
             string strSQL =
                 string.Format(
                     "INSERT INTO NHANVIEN " +

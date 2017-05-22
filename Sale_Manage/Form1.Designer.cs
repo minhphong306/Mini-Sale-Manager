@@ -114,15 +114,15 @@
             // 
             // lbStatus
             // 
-            this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbStatus.Location = new System.Drawing.Point(147, 106);
+            this.lbStatus.Location = new System.Drawing.Point(0, 106);
             this.lbStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(212, 26);
+            this.lbStatus.Size = new System.Drawing.Size(491, 26);
             this.lbStatus.TabIndex = 1;
             this.lbStatus.Text = "Tài khoản đã bị khóa";
+            this.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbStatus.Visible = false;
             // 
             // Form1

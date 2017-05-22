@@ -11,7 +11,7 @@ using Sale_Manage.Admin;
 
 namespace Sale_Manage {
     public partial class frmMain : Form {
-        public int ROLE { get; set; }
+        public int ROLE{ get; set; }
         public frmMain() {
             this.StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();
@@ -35,6 +35,13 @@ namespace Sale_Manage {
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmProduct().ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e) {
+            if (ROLE == 2)
+            {
+                mnManage.Enabled = false;
+            }
         }
     }
 }
