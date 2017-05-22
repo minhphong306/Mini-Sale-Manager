@@ -23,48 +23,50 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtAcc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMod = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.Location = new System.Drawing.Point(235, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 37);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Trở lại";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBack.Location = new System.Drawing.Point(235, 275);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(103, 37);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Trở lại";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // button1
+            // btnRegister
             // 
-            this.button1.Location = new System.Drawing.Point(113, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 37);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Đăng ký";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegister.Location = new System.Drawing.Point(113, 275);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(103, 37);
+            this.btnRegister.TabIndex = 13;
+            this.btnRegister.Text = "Đăng ký";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(156, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 26);
-            this.textBox2.TabIndex = 11;
+            this.txtPass.Location = new System.Drawing.Point(156, 162);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(191, 26);
+            this.txtPass.TabIndex = 11;
             // 
-            // textBox1
+            // txtAcc
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 26);
-            this.textBox1.TabIndex = 10;
+            this.txtAcc.Location = new System.Drawing.Point(156, 111);
+            this.txtAcc.Name = "txtAcc";
+            this.txtAcc.Size = new System.Drawing.Size(191, 26);
+            this.txtAcc.TabIndex = 10;
             // 
             // label3
             // 
@@ -108,25 +110,25 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Mod";
             // 
-            // comboBox1
+            // cbMod
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(156, 213);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 28);
-            this.comboBox1.TabIndex = 14;
+            this.cbMod.FormattingEnabled = true;
+            this.cbMod.Location = new System.Drawing.Point(156, 213);
+            this.cbMod.Name = "cbMod";
+            this.cbMod.Size = new System.Drawing.Size(192, 28);
+            this.cbMod.TabIndex = 14;
             // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 367);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cbMod);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAcc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -134,6 +136,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRegister";
             this.Text = "Đăng kí tài khoản";
+            this.Load += new System.EventHandler(this.frmRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,14 +144,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtAcc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMod;
     }
 }

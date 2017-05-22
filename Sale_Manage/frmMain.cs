@@ -12,6 +12,7 @@ using Sale_Manage.Admin;
 namespace Sale_Manage {
     public partial class frmMain : Form {
         public frmMain() {
+            this.StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();
         }
 
